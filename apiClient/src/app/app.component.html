@@ -1,0 +1,23 @@
+<h1 style="width: 100%; text-align: center;">Api</h1>
+<h2 style="width: 100%; text-align: center;">Items</h2>
+<br>
+<div style="width: 90%; display: flex; flex-wrap: wrap;" >
+<div *ngFor="let res of results" class="resDiv" appDirective1>
+    <h2 style="width: 100%; text-align: center;">{{res.id}}</h2>
+    <h4>Year: {{res.type}}</h4>
+    <h4>Year: {{res.brand}}</h4>
+    <p>{{res.price}}</p>
+</div>
+</div>
+
+<h2 style="width: 100%; text-align: center;">Sales</h2>
+<h3 style="margin-left: 2em;">Income: {{income}}</h3>
+
+<form action="https://localhost:7115/api/Sale/1" method="get">
+    <input type="number" placeholder="Id" id="sellId">
+    <input type="number" placeholder="Income" name="income" id="sellIncome">
+    <button type="submit">Sell</button>
+</form>
+
+<br>
+{{results  | json}}
